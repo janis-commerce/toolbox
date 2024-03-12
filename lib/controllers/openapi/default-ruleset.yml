@@ -1,0 +1,8 @@
+extends:
+  - spectral:oas
+
+rules:
+  info-contact: off # Not used
+  oas3-server-variables: off # Legacy environment variable must be set but is unused
+  oas3-valid-media-example: off
+  operation-tags: 'error'

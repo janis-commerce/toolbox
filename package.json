@@ -28,6 +28,7 @@
     "sinon": "^17.0.1"
   },
   "files": [
+    "cli/",
     "lib/"
   ],
   "directories": {

@@ -1,6 +1,6 @@
 {
   "name": "@janiscommerce/toolbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Janis Developer toolbox",
   "bin": "cli/index.js",
   "scripts": {

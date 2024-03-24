@@ -28,4 +28,11 @@ npm rm \
 	redoc-cli
 
 # Remove custom ruleset
-rm .spectral.yaml
+if [[ -f .spectral.yaml ]]; then
+	rm .spectral.yaml
+fi
+
+# Remove ibm validator config file
+if [[ -f .validaterc ]]; then
+	rm .validaterc
+fi

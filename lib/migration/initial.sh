@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Add toolbox as dev dependency
+npm i -D @janiscommerce/toolbox@latest
+
 # Set new npm scripts
 npm pkg set \
 	scripts.toolbox="npx @janiscommerce/toolbox" \

@@ -14,5 +14,16 @@ exports.describe = 'Install toolbox';
 exports.builder = {};
 
 exports.handler = () => {
-	logger.info(childProcess.execSync(path.resolve(__dirname, '../../lib/migration/initial.sh')).toString('utf8'));
+
+	return new Promise((resolve, reject) => {
+		const command = childProcess.spawn(path.resolve(__dirname, '../../lib/migration/initial.sh'));
+
+		command.stdout.on('data', data => logger.info(data));
+
+		command.stderr.on('data', data => logger.error(data));
+
+		command.on('close', exitStatus => {
+			return !exitStatus ? resolve() : reject(new Error(`Exited with status ${exitStatus}`));
+		});
+	});
 };

@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 # Add toolbox as dev dependency
+echo 'Installing toolbox in the repo...';
 npm i -D @janiscommerce/toolbox@latest
 
 # Set new npm scripts
+echo 'Setting up npm scripts...';
 npm pkg set \
 	scripts.toolbox="npx @janiscommerce/toolbox" \
 	scripts.openapi-bundle="toolbox openapi bundle" \
@@ -15,6 +17,8 @@ npm pkg set \
 if [[ $(npm pkg get scripts.postapi-schema-build) == "{}" ]]; then
 	npm pkg set --json scripts.postopenapi-bundle="$(npm pkg get scripts.postapi-schema-build)"
 fi
+
+echo 'Cleaning up...'
 
 # Remove old scripts
 npm pkg delete \

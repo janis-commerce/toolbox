@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.3] - 2024-03-25
+### Added
+- Install output is now streamed to stdout and stderr
+
 ## [1.1.2] - 2024-03-25
 ### Added
 - Toolbox is installed as dev dependency in initial migration script

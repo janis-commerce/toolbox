@@ -7,6 +7,7 @@ npm i -D @janiscommerce/toolbox@latest
 # Set new npm scripts
 echo 'Setting up npm scripts...';
 npm pkg set \
+	scripts.build="npm run environment-build && npm run openapi-bundle" \
 	scripts.toolbox="npx @janiscommerce/toolbox" \
 	scripts.openapi-bundle="toolbox openapi bundle" \
 	scripts.openapi-lint="toolbox openapi lint" \

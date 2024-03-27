@@ -19,6 +19,11 @@ if [[ $(npm pkg get scripts.postapi-schema-build) == "{}" ]]; then
 	npm pkg set --json scripts.postopenapi-bundle="$(npm pkg get scripts.postapi-schema-build)"
 fi
 
+# Fix pre-commit schema validation
+if [[ -f .lintstagedrc.js ]]; then
+	sed -i 's/validate-schema/openapi-lint/' .lintstagedrc.js
+fi
+
 echo 'Cleaning up...'
 
 # Remove old scripts

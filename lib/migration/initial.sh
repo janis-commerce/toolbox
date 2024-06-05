@@ -15,7 +15,7 @@ npm pkg set \
 	scripts.openapi="toolbox openapi dev"
 
 # Migrate post build script to post bundle
-if [[ $(npm pkg get scripts.postapi-schema-build) == "{}" ]]; then
+if [[ $(npm pkg get scripts.postapi-schema-build) != "{}" ]]; then
 	npm pkg set --json scripts.postopenapi-bundle="$(npm pkg get scripts.postapi-schema-build)"
 fi
 

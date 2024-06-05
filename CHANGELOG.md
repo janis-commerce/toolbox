@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.5] - 2024-06-05
+- Installation script now migrates post `npm run api-schema-build` script properly
+
 ## [1.1.4] - 2024-03-27
 ### Fixed
 - Installation script now migrates `npm run build` and pre-commit hooks properly

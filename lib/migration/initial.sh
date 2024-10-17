@@ -49,3 +49,6 @@ fi
 if [[ -f .validaterc ]]; then
 	rm .validaterc
 fi
+
+# Service flow script
+npm pkg set scripts.flow:draw="toolbox flow draw"

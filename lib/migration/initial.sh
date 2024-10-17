@@ -4,6 +4,10 @@
 echo 'Installing toolbox in the repo...';
 npm i -D @janiscommerce/toolbox@latest
 
+########
+# OpenAPI
+########
+
 # Set new npm scripts
 echo 'Setting up npm scripts...';
 npm pkg set \
@@ -50,5 +54,28 @@ if [[ -f .validaterc ]]; then
 	rm .validaterc
 fi
 
-# Service flow script
+##############
+# Service flow
+##############
+
+## Add npm script
 npm pkg set scripts.flow:draw="toolbox flow draw"
+
+## Add diagram to .gitignore
+diagramFileName="service-flow.d2"
+
+# If the line doesn't exist, append it to the file
+if ! grep -Fxq "$diagramFileName" .gitignore; then
+
+	last_char=$(tail -c 1 .gitignore)
+
+	# If file does not end with a newline, insert one
+	if [ "$last_char" != "" ]; then
+		echo "" >> .gitignore
+	fi
+
+	echo "" >> .gitignore
+	echo "# D2 Service flow diagram" >> .gitignore
+	echo "$diagramFileName" >> .gitignore
+	echo "$diagramFileName added to .gitignore"
+fi

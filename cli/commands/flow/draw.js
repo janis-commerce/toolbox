@@ -18,5 +18,5 @@ exports.handler = async () => {
 	// eslint-disable-next-line global-require, import/no-dynamic-require
 	const serviceConfig = require(path.resolve('serverless.js'));
 
-	await draw(serviceConfig);
+	await draw(await serviceConfig);
 };
